@@ -142,7 +142,7 @@ namespace CyrillicHomographGen
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cyrillic Homograph Generator\nVersion 1.0.0.0\nCopyright (C) reinforchu", "Cyrillic Homograph Generator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Cyrillic Homograph Generator v1\nCopyright (C) reinforchu", "Cyrillic Homograph Generator", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
