@@ -124,7 +124,11 @@ namespace CyrillicHomographGen
                 }
             }
             textBox2.Text = domain.ToString();
-            textBox3.Text = "http://" + domain.ToString() + ".com/";
+
+            if (!string.IsNullOrEmpty(domain.ToString()))
+            {
+                textBox3.Text = "http://" + domain.ToString() + ".com/";
+            }
             domain.Clear();
             button1.Enabled = false;
         }
