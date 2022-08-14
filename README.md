@@ -1,3 +1,4 @@
 # CyrillicHomographGenerator
- Cyrillic IDN homograph attack tool 
+ Cyrillic IDN homograph attack tool
+ 
  ![screenshot](screenshot.png "screenshot")
