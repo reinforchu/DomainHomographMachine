@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E317DA2C-20BB-4D0A-A51D-4044AE249999}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CyrillicHomographGen</RootNamespace>
-    <AssemblyName>CyrillicHomographGen</AssemblyName>
+    <RootNamespace>DomainHomographMachine</RootNamespace>
+    <AssemblyName>DomainHomographMachine</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>CHG.ico</ApplicationIcon>
+    <ApplicationIcon>Venn_diagram_gr_la_ru.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,7 +111,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CHG.ico" />
+    <Content Include="Venn_diagram_gr_la_ru.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

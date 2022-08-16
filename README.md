@@ -1,4 +1,4 @@
-# CyrillicHomographGenerator
- Cyrillic IDN homograph attack tool
+# Domain Homograp hMachine
+ IDN homograph attack tool
  
  ![screenshot](screenshot.png "screenshot")
