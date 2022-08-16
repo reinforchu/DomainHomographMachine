@@ -62,9 +62,10 @@
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.Location = new System.Drawing.Point(112, 59);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 19);
+            this.textBox2.Size = new System.Drawing.Size(278, 23);
             this.textBox2.TabIndex = 1;
             // 
             // menuStrip1
@@ -155,14 +156,15 @@
             // 
             // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox3.Location = new System.Drawing.Point(112, 135);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(278, 19);
+            this.textBox3.Size = new System.Drawing.Size(278, 23);
             this.textBox3.TabIndex = 10;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(396, 57);
+            this.button4.Location = new System.Drawing.Point(396, 58);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 12;
@@ -181,9 +183,10 @@
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox4.Location = new System.Drawing.Point(112, 84);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(278, 19);
+            this.textBox4.Size = new System.Drawing.Size(278, 23);
             this.textBox4.TabIndex = 14;
             // 
             // button1
@@ -217,9 +220,10 @@
             // 
             // textBox5
             // 
+            this.textBox5.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(112, 110);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(278, 19);
+            this.textBox5.Size = new System.Drawing.Size(278, 23);
             this.textBox5.TabIndex = 17;
             // 
             // button5
