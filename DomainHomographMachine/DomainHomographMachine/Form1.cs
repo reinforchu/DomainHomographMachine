@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -54,116 +55,34 @@ namespace CyrillicHomographGen
             MessageBox.Show("This software is intended for cybersecurity research purposes.\nTherefore you are not allowed to exploit and abuse the results of this tool in any way. And the developer does not take any responsibility.", "End User License Agreement", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // Cyrillic
         {
-            string inputString = textBox1.Text;
-            foreach (char character in inputString) // Cyrillic
+            var CyrillicTable = new Dictionary<string, string>()
             {
-                if (Regex.IsMatch(character.ToString(), "a"))
-                {
-                    domain.Append("а");
-                }
-                if (Regex.IsMatch(character.ToString(), "e"))
-                {
-                    domain.Append("е");
-                }
-                if (Regex.IsMatch(character.ToString(), "o"))
-                {
-                    domain.Append("о");
-                }
-                if (Regex.IsMatch(character.ToString(), "r"))
-                {
-                    domain.Append("г");
-                }
-                if (Regex.IsMatch(character.ToString(), "p"))
-                {
-                    domain.Append("р");
-                }
-                if (Regex.IsMatch(character.ToString(), "k"))
-                {
-                    domain.Append("к");
-                }
-                if (Regex.IsMatch(character.ToString(), "s"))
-                {
-                    domain.Append("ѕ");
-                }
-                if (Regex.IsMatch(character.ToString(), "c"))
-                {
-                    domain.Append("с");
-                }
-                if (Regex.IsMatch(character.ToString(), "x"))
-                {
-                    domain.Append("х");
-                }
-                if (Regex.IsMatch(character.ToString(), "y"))
-                {
-                    domain.Append("у");
-                }
-                if (Regex.IsMatch(character.ToString(), "i"))
-                {
-                    domain.Append("і");
-                }
-                if (Regex.IsMatch(character.ToString(), "l"))
-                {
-                    domain.Append("ӏ");
-                }
-                if (Regex.IsMatch(character.ToString(), "3"))
-                {
-                    domain.Append("ӡ");
-                }
-                if (Regex.IsMatch(character.ToString(), "h"))
-                {
-                    domain.Append("һ");
-                }
-                if (Regex.IsMatch(character.ToString(), "b"))
-                {
-                    domain.Append("Ь");
-                }
-                if (Regex.IsMatch(character.ToString(), "m"))
-                {
-                    domain.Append("м");
-                }
-                if (Regex.IsMatch(character.ToString(), "q"))
-                {
-                    domain.Append("ԛ");
-                }
-                if (Regex.IsMatch(character.ToString(), "w"))
-                {
-                    domain.Append("ԝ");
-                }
-                if (Regex.IsMatch(character.ToString(), "j"))
-                {
-                    domain.Append("ј");
-                }
-                if (Regex.IsMatch(character.ToString(), "f"))
-                {
-                    domain.Append("ғ");
-                }
-                if (Regex.IsMatch(character.ToString(), "t"))
-                {
-                    domain.Append("т");
-                }
-                if (Regex.IsMatch(character.ToString(), "u"))
-                {
-                    domain.Append("ч");
-                }
-                if (Regex.IsMatch(character.ToString(), "[0-9]"))
-                {
-                    domain.Append(character);
-                }
-                if (Regex.IsMatch(character.ToString(), "-"))
-                {
-                    domain.Append(character);
-                }
-                if (!Regex.IsMatch(character.ToString(), "[aeorpkscxyil3bmqwjftu0-9-]"))
+                {"a", "а"}, {"e", "е"}, {"o", "о"}, {"r", "г"}, {"p", "р"}, {"k", "к"}, {"s", "ѕ"}, {"c", "с"}, {"x", "х"}, {"y", "у"}, {"i", "і"}, {"l", "ӏ"}, {"h", "һ"}, {"b", "Ь"}, {"m", "м"}, {"q", "ԛ"}, {"w", "ԝ"}, {"j", "ј"}, {"f", "ғ"}, {"t", "т"}, {"u", "ч"}
+            };
+            foreach (char character in textBox1.Text)
+            {
+                if (!Regex.IsMatch(character.ToString(), "[aeorpkscxyilbmqwjftu0-9-]"))
                 {
                     MessageBox.Show("There was no substituted letter for '" + character + "'.\nStop searching for the Cyrillic subcategory.", "Exception - Cyrillic", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     domain.Clear();
                     break;
                 }
+                foreach (KeyValuePair<string, string> cyrillic in CyrillicTable)
+                {
+                    if (Regex.IsMatch(character.ToString(), cyrillic.Key))
+                    {
+                        domain.Append(cyrillic.Value);
+                        break;
+                    }
+                }
+                if (Regex.IsMatch(character.ToString(), "[0-9-]"))
+                {
+                    domain.Append(character);
+                }
             }
             textBox2.Text = domain.ToString();
-
             if (!string.IsNullOrEmpty(domain.ToString()))
             {
                 textBox3.Text = "http://" + domain.ToString() + ".com/";
@@ -180,72 +99,34 @@ namespace CyrillicHomographGen
             textBox5.Clear();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)  // Greek and Coptic
         {
-            string inputString = textBox1.Text;
-            foreach (char character in inputString) // Greek and Coptic
+            var GreekAndCopticTable = new Dictionary<string, string>()
             {
-                if (Regex.IsMatch(character.ToString(), "a"))
-                {
-                    domain.Append("α");
-                }
-                if (Regex.IsMatch(character.ToString(), "y"))
-                {
-                    domain.Append("γ");
-                }
-                if (Regex.IsMatch(character.ToString(), "l"))
-                {
-                    domain.Append("ι");
-                }
-                if (Regex.IsMatch(character.ToString(), "k"))
-                {
-                    domain.Append("κ");
-                }
-                if (Regex.IsMatch(character.ToString(), "v"))
-                {
-                    domain.Append("ν");
-                }
-                if (Regex.IsMatch(character.ToString(), "i"))
-                {
-                    domain.Append("ί");
-                }
-                if (Regex.IsMatch(character.ToString(), "o"))
-                {
-                    domain.Append("ο");
-                }
-                if (Regex.IsMatch(character.ToString(), "p"))
-                {
-                    domain.Append("ρ");
-                }
-                if (Regex.IsMatch(character.ToString(), "t"))
-                {
-                    domain.Append("τ");
-                }
-                if (Regex.IsMatch(character.ToString(), "u"))
-                {
-                    domain.Append("υ");
-                }
-                if (Regex.IsMatch(character.ToString(), "x"))
-                {
-                    domain.Append("χ");
-                }
-                if (Regex.IsMatch(character.ToString(), "[0-9]"))
-                {
-                    domain.Append(character);
-                }
-                if (Regex.IsMatch(character.ToString(), "-"))
-                {
-                    domain.Append(character);
-                }
+                {"a", "α"}, {"y", "γ"}, {"l", "ι"}, {"k", "κ"}, {"v", "ν"}, {"i", "ί"}, {"o", "ο"}, {"p", "ρ"}, {"u", "υ"}, {"x", "χ"}
+            };
+            foreach (char character in textBox1.Text)
+            {
                 if (!Regex.IsMatch(character.ToString(), "[aylkvioptux0-9-]"))
                 {
                     MessageBox.Show("There was no substituted letter for '" + character + "'.\nStop searching for the Greek and Coptic subcategory.", "Exception - Greek and Coptic", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     domain.Clear();
                     break;
                 }
+                foreach (KeyValuePair<string, string> greek in GreekAndCopticTable)
+                {
+                    if (Regex.IsMatch(character.ToString(), greek.Key))
+                    {
+                        domain.Append(greek.Value);
+                        break;
+                    }
+                }
+                if (Regex.IsMatch(character.ToString(), "[0-9-]"))
+                {
+                    domain.Append(character);
+                }
             }
             textBox4.Text = domain.ToString();
-
             if (!string.IsNullOrEmpty(domain.ToString()))
             {
                 textBox3.Text = "http://" + domain.ToString() + ".com/";
@@ -253,68 +134,34 @@ namespace CyrillicHomographGen
             domain.Clear();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) // Armenian
         {
-            string inputString = textBox1.Text;
-            foreach (char character in inputString) // Armenian
+            var ArmenianTable = new Dictionary<string, string>()
             {
-                if (Regex.IsMatch(character.ToString(), "t"))
-                {
-                    domain.Append("ե");
-                }
-                if (Regex.IsMatch(character.ToString(), "q"))
-                {
-                    domain.Append("զ");
-                }
-                if (Regex.IsMatch(character.ToString(), "d"))
-                {
-                    domain.Append("ժ");
-                }
-                if (Regex.IsMatch(character.ToString(), "l"))
-                {
-                    domain.Append("լ");
-                }
-                if (Regex.IsMatch(character.ToString(), "h"))
-                {
-                    domain.Append("հ");
-                }
-                if (Regex.IsMatch(character.ToString(), "j"))
-                {
-                    domain.Append("յ");
-                }
-                if (Regex.IsMatch(character.ToString(), "n"))
-                {
-                    domain.Append("ո");
-                }
-                if (Regex.IsMatch(character.ToString(), "u"))
-                {
-                    domain.Append("ս");
-                }
-                if (Regex.IsMatch(character.ToString(), "g"))
-                {
-                    domain.Append("ց");
-                }
-                if (Regex.IsMatch(character.ToString(), "o"))
-                {
-                    domain.Append("օ");
-                }
-                if (Regex.IsMatch(character.ToString(), "[0-9]"))
-                {
-                    domain.Append(character);
-                }
-                if (Regex.IsMatch(character.ToString(), "-"))
-                {
-                    domain.Append(character);
-                }
+                {"t", "ե"}, {"q", "զ"}, {"d", "ժ"}, {"l", "լ"}, {"h", "հ"}, {"j", "յ"}, {"n", "ո"}, {"u", "ս"}, {"g", "ց"}, {"o", "օ"}
+            };
+            foreach (char character in textBox1.Text)
+            {
                 if (!Regex.IsMatch(character.ToString(), "[tqdlhjnugo0-9-]"))
                 {
                     MessageBox.Show("There was no substituted letter for '" + character + "'.\nStop searching for the Armenian subcategory.", "Exception - Armenian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     domain.Clear();
                     break;
                 }
+                foreach (KeyValuePair<string, string> armenian in ArmenianTable)
+                {
+                    if (Regex.IsMatch(character.ToString(), armenian.Key))
+                    {
+                        domain.Append(armenian.Value);
+                        break;
+                    }
+                }
+                if (Regex.IsMatch(character.ToString(), "[0-9-]"))
+                {
+                    domain.Append(character);
+                }
             }
             textBox5.Text = domain.ToString();
-
             if (!string.IsNullOrEmpty(domain.ToString()))
             {
                 textBox3.Text = "http://" + domain.ToString() + ".com/";
