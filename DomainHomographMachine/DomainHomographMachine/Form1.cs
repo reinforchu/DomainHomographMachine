@@ -14,7 +14,7 @@ namespace CyrillicHomographGen
         Dictionary<string, string> CyrillicTable = new Dictionary<string, string>() { { "a", "а" }, { "e", "е" }, { "o", "о" }, { "r", "г" }, { "p", "р" }, { "k", "к" }, { "s", "ѕ" }, { "c", "с" }, { "x", "х" }, { "y", "у" }, { "i", "і" }, { "l", "ӏ" }, { "h", "һ" }, { "b", "Ь" }, { "m", "м" }, { "q", "ԛ" }, { "w", "ԝ" }, { "j", "ј" }, { "f", "ғ" }, { "t", "т" }, { "u", "ч" } };
         const string CyrillicRegex = "[aeorpkscxyilbmqwjftu0-9-]";
         Dictionary<string, string> GreekAndCopticTable = new Dictionary<string, string>() { { "a", "α" }, { "y", "γ" }, { "l", "ι" }, { "k", "κ" }, { "v", "ν" }, { "i", "ί" }, { "o", "ο" }, { "p", "ρ" }, { "u", "υ" }, { "x", "χ" } };
-        const string GreekAndCopticRegex = "[aeorpkscxyilbmqwjftu0-9-]";
+        const string GreekAndCopticRegex = "[aylkvioptux0-9-]";
         Dictionary<string, string> ArmenianTable = new Dictionary<string, string>() { { "t", "ե" }, { "q", "զ" }, { "d", "ժ" }, { "l", "լ" }, { "h", "հ" }, { "j", "յ" }, { "n", "ո" }, { "u", "ս" }, { "g", "ց" }, { "o", "օ" } };
         const string ArmenianRegex = "[tqdlhjnugo0-9-]";
 
